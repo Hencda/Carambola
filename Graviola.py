@@ -36,14 +36,15 @@ def game() -> str:
     limit = getlimit()
     stringtodapoderosa = ''
     print(stringtodapoderosa)
-    stringtodapoderosa += str(limit) + 'l'
+    #stringtodapoderosa += str(limit) + 'l'
     index = 0
+    limi = limit
     while limit > 0:
         index += 1
         r = random.choice([1,2])
         limit -= r
         stringtodapoderosa += separ(index) + 'R' + str(r)
-    return stringtodapoderosa + separ(index) + 'V'
+    return str(limi) + 'l' + separ(index) + 'V' + stringtodapoderosa
 
 
 #base while só pq eu aprendi a fazer assim
@@ -56,7 +57,7 @@ while True:
         break
     if a == 'game':
         oquevaiserescrito = ''
-        for _ in range(1000):
+        for _ in range(10000):
             print('ok') 
             oquevaiserescrito += game() + '\n'
         escrever(oquevaiserescrito)
